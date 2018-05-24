@@ -186,7 +186,7 @@ module.exports = function(schema, options) {
 
   // Passport Local Interface
   schema.statics.authenticate = function() {
-    return (username, password, cb) => {
+    return (req, username, password, cb) => {
       const promise = Promise.resolve()
       .then(() => this.findByUsername(username, true))
       .then((user) => {
